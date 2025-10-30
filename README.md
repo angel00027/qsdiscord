@@ -1,8 +1,8 @@
 # QsDiscord - Integración avanzada de Discord para Minecraft
 
 ![QsDiscord](https://img.shields.io/badge/QsDiscord-Discord%20Integration-blue?style=flat-square)
-![Version](https://img.shields.io/badge/version-1.0.0-green)
-![Minecraft](https://img.shields.io/badge/Minecraft-1.20-blue)
+![Version](https://img.shields.io/badge/version-1.2-green)
+![Minecraft](https://img.shields.io/badge/Minecraft-1.20.6-blue)
 
 ---
 
