@@ -1,78 +1,112 @@
-# QsDiscord
+# QsDiscord - Integración avanzada de Discord para Minecraft
 
-**QsDiscord** es un plugin de Minecraft que integra tu servidor con Discord, permitiendo enviar alertas, anuncios y sincronizar roles de jugadores con su cuenta de Discord. Compatible con **Spigot/Paper 1.20+**.
-
----
-
-## 📜 Descripción
-
-Con QsDiscord puedes:  
-
-- Sincronizar roles de Discord con jugadores de Minecraft.  
-- Enviar alertas y anuncios a canales de Discord configurables.  
-- Vincular y desvincular cuentas de Discord de manera manual o automática.  
-- Ejecutar eventos de prueba con placeholders y MythicMobs.  
-- Resetear cooldowns de eventos por jugador o globalmente.  
-
-El plugin es **compatible con**:  
-- [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) (opcional, para placeholders)  
-- [MythicMobs](https://www.spigotmc.org/resources/mythicmobs.5702/)  
-- [LuckPerms](https://www.spigotmc.org/resources/luckperms.28140/) (opcional, para roles)  
+![QsDiscord](https://img.shields.io/badge/QsDiscord-Discord%20Integration-blue?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.0.0-green)
+![Minecraft](https://img.shields.io/badge/Minecraft-1.20-blue)
 
 ---
 
-## ⚙️ Instalación
+## 📖 Descripción
 
-1. Coloca el `.jar` de QsDiscord en la carpeta `plugins/` de tu servidor.  
-2. Instala las dependencias necesarias: MythicMobs, PlaceholderAPI y LuckPerms (según funciones que uses).  
-3. Reinicia tu servidor para que se generen los archivos de configuración.  
-4. Configura los canales de Discord en `config.yml`.  
+QsDiscord es un plugin de Minecraft que conecta tu servidor directamente con Discord.
+Con este complemento puedes:
 
----
-
-## 🛠 Comandos
-
-| Comando | Descripción | Ejemplo |
-|---------|------------|---------|
-| `/qsdc reload <bot|config|alerts|messages|all>` | Recarga configuración o reinicia el bot de Discord. | `/qsdc reload bot` |
-| `/qsdc adminlink <jugador> <discord_id>` | Vincula manualmente un jugador con un Discord ID. | `/qsdc adminlink Steve 123456789012345678` |
-| `/qsdc adminunlink <jugador>` | Desvincula manualmente la cuenta de un jugador. | `/qsdc adminunlink Steve` |
-| `/qsdc sync [jugador]` | Sincroniza roles de Discord de un jugador. Si no se indica jugador, sincroniza tu cuenta. | `/qsdc sync Alex` |
-| `/qsdc resetcooldown [evento|jugador]` | Resetea cooldowns de eventos o jugadores. | `/qsdc resetcooldown bossfight` |
-| `/qsdc announcetest <evento>` | Ejecuta un evento de prueba para ver cómo se enviaría a Discord. | `/qsdc announcetest welcome` |
-| `/qsdc status` | Muestra si el bot de Discord está conectado. | `/qsdc status` |
-| `/qsdc alert [canal] <mensaje>` | Envía un mensaje de alerta a Discord. | `/qsdc alert alerts ¡Servidor en mantenimiento!` |
-| `/qsdc link` | Genera un código de vinculación para tu Discord (jugador). | `/qsdc link` |
-| `/qsdc unlink` | Desvincula tu cuenta de Discord (jugador). | `/qsdc unlink` |
-| `/qsdc announce [canal] <mensaje>` | Envía un anuncio a Discord. | `/qsdc announce announcements ¡Evento iniciado!` |
-| `/qsdc setchannel <nombre> <id>` | Configura un canal de Discord para alertas o anuncios. | `/qsdc setchannel alerts 123456789012345678` |
-| `/qsdc help` | Muestra la ayuda con todos los comandos disponibles. | `/qsdc help` |
+* 📢 Enviar alertas y anuncios automáticos a canales de Discord.
+* 🔧 Sincronizar roles de Discord con los rangos de tus jugadores.
+* 🔗 Vincular cuentas de Minecraft con Discord para una experiencia integrada.
+* 🛠 Ejecutar acciones administrativas desde el juego de forma segura y controlada.
 
 ---
 
-## 🔑 Permisos
+## ⚙️ Compatibilidad / Softdepend
 
-| Permiso | Descripción | Predeterminado |
-|---------|------------|----------------|
-| `qsdiscord.use` | Permite usar el comando principal `/qsdc`. | true |
-| `qsdiscord.reload` | Permite recargar configuración y reiniciar el bot. | op |
-| `qsdiscord.adminlink` | Permite vincular manualmente cuentas de Discord a jugadores. | op |
-| `qsdiscord.adminunlink` | Permite desvincular manualmente cuentas de Discord de jugadores. | op |
-| `qsdiscord.sync` | Permite sincronizar roles de Discord de jugadores. | op |
-| `qsdiscord.alert` | Permite enviar alertas a Discord. | op |
-| `qsdiscord.announce` | Permite enviar anuncios a Discord. | op |
-| `qsdiscord.setchannel` | Permite configurar los canales de Discord. | op |
-| `qsdiscord.announce.resetcooldown` | Permite resetear cooldowns de eventos o jugadores. | op |
-| `qsdiscord.announce.test` | Permite ejecutar eventos de prueba en Discord. | op |
+Este plugin funciona junto con varios complementos populares para maximizar su potencial:
+
+* ✅ [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) → Para utilizar placeholders dinámicos en mensajes y alertas.
+* ✅ [LuckPerms](https://www.spigotmc.org/resources/luckperms.28140/) → Para sincronizar rangos y roles entre Minecraft y Discord.
+* ✅ [MythicMobs](https://www.spigotmc.org/resources/mythicmobs.5702/) → Permite enviar anuncios automáticos a Discord cuando un jefe aparece o es derrotado.
+
+Estas dependencias aseguran que los eventos, roles y mensajes sean totalmente personalizables y sincronizados correctamente.
 
 ---
 
-## 📂 Archivos de Configuración
+## 🌟 Características destacadas
 
-- `config.yml` → Configuración principal del plugin y canales de Discord.  
-- `messages.yml` → Mensajes personalizables para alertas, anuncios y comandos.  
-- `alerts.yml` → Alertas automáticas configurables.  
-- `announcements.yml` → Eventos y mensajes automáticos configurables.  
+* 📨 Envío de mensajes y alertas a canales de Discord configurables.
+* 🔗 Vinculación de cuentas Minecraft ↔ Discord.
+* 👑 Sincronización automática de roles según los rangos de los jugadores.
+* 🔄 Recarga de configuración, mensajes y alertas sin reiniciar el servidor.
+* 🧪 Pruebas de anuncios y alertas en tiempo real.
+* 🛠 Comandos administrativos avanzados para gestión completa desde el juego.
+* ⚡ Sistema de alertas configurable desde `alerts.yml` para personalizar cada notificación.
 
 ---
 
+## 📂 Instalación
+
+1. Descarga el archivo `.jar` del plugin.
+2. Coloca el `.jar` en la carpeta `plugins` de tu servidor.
+3. Asegúrate de tener instalados los softdepend necesarios: PlaceholderAPI, LuckPerms y MythicMobs (opcional según tus necesidades).
+4. Reinicia tu servidor para generar los archivos de configuración.
+5. Configura tu token de Discord y los canales en `config.yml`.
+
+---
+
+## 📝 Configuración
+
+* `config.yml`: Configuración principal del bot de Discord, canales, roles y prefijos.
+* `alerts.yml`: Configuración de alertas automáticas para comandos, eventos y placeholders.
+* `announcements.yml`: Configuración de anuncios automáticos para eventos y placeholders.
+* `messages.yml`: Personalización de mensajes, permisos y textos para comandos.
+
+---
+
+## 💻 Comandos principales
+
+```
+/qsdc reload [bot|config|alerts|messages|all] → Recarga parcial o total del plugin
+/qsdc menu → Abre el menú de configuración
+/qsdc status → Muestra si el bot de Discord está conectado
+/qsdc alert [canal] [mensaje] → Envía un mensaje de alerta a Discord
+/qsdc announce [canal] [mensaje] → Envía un anuncio a Discord
+/qsdc link → Genera un código para vincular tu cuenta con Discord
+/qsdc unlink → Desvincula tu cuenta de Discord
+/qsdc sync [jugador] → Sincroniza roles de Discord
+/qsdc setchannel <nombre> <id> → Configura canales de Discord
+/qsdc resetcooldown [evento|jugador] → Restablece cooldowns
+/qsdc announcetest <evento> → Prueba un evento sin afectar el juego
+/qsdc adminlink <jugador> <discord_id> → Vincula un jugador manualmente
+/qsdc adminunlink <jugador> → Desvincula un jugador manualmente
+```
+
+---
+
+## 🔐 Permisos
+
+* `qsdiscord.reload` → Recarga configuraciones del plugin.
+* `qsdiscord.menu` → Abre el menú de configuración.
+* `qsdiscord.adminlink` → Vincula cuentas manualmente.
+* `qsdiscord.adminunlink` → Desvincula cuentas manualmente.
+* `qsdiscord.sync` → Sincroniza roles de Discord.
+* `qsdiscord.alert` → Envía alertas a Discord.
+* `qsdiscord.announce` → Envía anuncios a Discord.
+* `qsdiscord.setchannel` → Configura canales de Discord.
+* `qsdiscord.announce.resetcooldown` → Reinicia tiempos de reutilización.
+* `qsdiscord.announce.test` → Ejecuta eventos de prueba.
+
+---
+
+## 💬 Soporte y opinión
+
+Si disfrutas del plugin o tienes sugerencias:
+
+* ¿Tienes preguntas o problemas con el plugin?
+  Únete a nuestro Discord para recibir ayuda rápida: [Haz clic aquí](https://discord.com/invite/KuyqQmgpx2)
+
+* No olvides dejar tu calificación y comentario, ¡nos ayuda a mejorar el plugin continuamente! 😊
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la [MIT License](LICENSE) – consulta el archivo LICENSE para más información.
